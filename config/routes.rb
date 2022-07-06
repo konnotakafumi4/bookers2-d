@@ -20,6 +20,5 @@ Rails.application.routes.draw do
   get "search" => "searches#search"
 
   #DM機能
-  resources :messages, only: [:create]
-  resources :rooms, only: [:create, :index, :show]
+  resources :chats, only: [:show, :create]
 end
