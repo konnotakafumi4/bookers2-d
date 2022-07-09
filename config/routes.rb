@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   #DM機能
   resources :chats, only: [:show, :create]
+
+  resources :groups, except: [:destroy]
 end

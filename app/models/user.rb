@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   has_many :books
 
+  has_many :group_users   #ここ！
+
+  has_many :groups, through: :group_users
+
   has_many :favorites, dependent: :destroy
 
   has_many :book_comments, dependent: :destroy
@@ -24,8 +28,10 @@ class User < ApplicationRecord
   has_many :user_rooms
   has_many :chats
   has_many :rooms, through: :user_rooms
-  
+
   has_many :view_counts, dependent: :destroy
+
+
 
   has_one_attached :profile_image
 
